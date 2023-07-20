@@ -1,0 +1,48 @@
+version: '3'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    ports:
+      - 5432:5432
+    networks:
+      - dbo-api-network
+  
+  redis:
+    build:
+      context: .
+      dockerfile: Dockerfile.redis
+    ports:
+      - 6379:6379
+    networks:
+      - dbo-api-network
+
+  rabbitmq:
+    build:
+      context: .
+      dockerfile: Dockerfile.rabbitmq
+    ports:
+      - 5672:5672 
+      - 15672:15672
+    networks:
+      - dbo-api-network
+  
+  dbo-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    networks:
+      - dbo-api-network
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+      - rabbitmq
+
+networks:
+  dbo-api-network:
+    driver: bridge

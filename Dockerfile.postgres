@@ -1,0 +1,13 @@
+# Dockerfile for PostgreSQL
+FROM postgres:latest
+
+# Copy the initialization script to the container
+COPY init.sql /docker-entrypoint-initdb.d/
+
+# Set the PostgreSQL environment variables
+ENV POSTGRES_USER=dbo_admin \
+    POSTGRES_PASSWORD=dbo_admin \
+    POSTGRES_DB=toko
+
+# Expose the PostgreSQL port
+EXPOSE 5432

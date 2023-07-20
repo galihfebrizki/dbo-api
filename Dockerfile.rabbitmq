@@ -1,0 +1,10 @@
+# Use the official RabbitMQ image from Docker Hub
+FROM rabbitmq:3.9-management
+
+# Optional: Set any custom configuration
+# For example, if you have a custom rabbitmq.config file, you can copy it to the container
+# COPY rabbitmq.config /etc/rabbitmq/
+
+# Expose the RabbitMQ ports
+# RabbitMQ default ports: 5672 (AMQP) and 15672 (Management Web UI)
+EXPOSE 5672 15672
