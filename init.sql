@@ -215,4 +215,15 @@ GRANT USAGE ON SCHEMA public TO public;
 
 
 INSERT INTO users (id,username,"password",full_name,status,"level",created_at,updated_at) VALUES
-	 ('1638070605594742300','galih.febrizki@gmail.com','5f4dcc3b5aa765d61d8327deb882cf99','Galih Febrizki',1,0,'2023-07-19 10:19:03.043387+00',NULL);
+	 ('1638070605594742300','admin@admin.com','5f4dcc3b5aa765d61d8327deb882cf99','Admin',1,1,'2023-07-19 10:19:03.043387+00',NULL);
+INSERT INTO order_status (id,"name",created_at,updated_at) VALUES
+	 (1,'Create','2023-07-19 10:19:30.783621+00',NULL),
+	 (2,'Ready To Pay','2023-07-19 10:19:30.783621+00',NULL),
+	 (3,'Paid','2023-07-19 10:19:30.783621+00',NULL),
+	 (4,'Success','2023-07-19 10:19:30.783621+00',NULL)
+	 (10,'Failed','2023-07-19 10:19:30.783621+00',NULL);
+INSERT INTO quantity_type (id,"name",created_at,updated_at) VALUES
+	 (1,'PCS','2023-07-19 10:13:51.232978+00',NULL);
+INSERT INTO user_status (id,"name",created_at,updated_at) VALUES
+	 (1,'Active','2023-07-19 10:18:57.789588+00',NULL),
+	 (2,'Banned','2023-07-19 10:18:57.798501+00',NULL);
