@@ -2,7 +2,9 @@
 DPO Service API
 
 ## How to run all system
+```
 docker compose up
+```
 
 ## How to run
 - make sure you have setup .env file in project folder
